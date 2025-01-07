@@ -1,0 +1,23 @@
+<h1 class="text-primary">Fetch Product Details</h1>
+
+<form #myform="ngForm" (ngSubmit)="myform.valid && fetchProduct(myform)">
+  <div>
+    <label for="id"> Id </label>
+    <input type="number" id="id" name="productId" ngModel />
+  </div>
+
+  <input type="submit" value="Get Product" />
+</form>
+
+<div class="jumbotron" *ngIf="product !== undefined">
+  Product Id is {{ product.productId }} <br />
+  Product Name is {{ product.productName }} <br />
+  Product Price is {{ product.price }} <br />
+  Product image is <img [src]= "product.image" alt="Source Unknown"> <br />
+  Product Color is {{ product.color }} <br />
+  
+  Product Specification is {{ product.specification }} <br />
+  Product Manufacturer is {{ product.manufacturer }} <br />
+  Product Quantity is {{ product.quantity }} <br />
+  Product Category is {{ product.category }}
+</div>

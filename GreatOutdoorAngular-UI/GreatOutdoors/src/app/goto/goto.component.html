@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Brand -->
+        <a class="navbar-brand " href=#>
+            <img class="logosize" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTjrtvwUjyE8KuUEo886ziE4hogmrnKxz8vUgkcgyZ6_bud3ydP&usqp=CAU " alt="Logo ">
+        </a>
+<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Product
+        </a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" routerLink="/add-product" routerLinkActive="active">Add Product</a>
+            <a class="dropdown-item" routerLink="/product-details" routerLinkActive="active">ProductDetails</a>
+            <a class="dropdown-item" routerLink="/list-product" routerLinkActive="active">List Of Products</a>
+       </div>
+        </li>
+        <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                  Customer
+                </a>
+                <div class="dropdown-menu">
+                        <a class="dropdown-item" routerLink="/add-customer" routerLinkActive="active">Add Customer</a>
+                        <a class="dropdown-item" routerLink="/customerDetails" routerLinkActive="active">Customer Details</a>
+                    </div>
+                    </li>    
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                Order
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" routerLink="/add-order" routerLinkActive="active">Add Order</a>
+                            <a class="dropdown-item" routerLink="/order-details" routerLinkActive="active">OrderDetails</a>
+                            <a class="dropdown-item" routerLink="/list-order" routerLinkActive="active">List Of Orders</a>
+                       </div>
+                        </li>
+        </nav>
+        <router-outlet></router-outlet>

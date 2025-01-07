@@ -1,0 +1,10 @@
+<h1 class="text-primary">Product List</h1>
+<div class="jumbotron">
+<ul>
+  <li *ngFor="let product of products">
+    <a href="http://localhost:4200/product-details"> <img id="images" [src]= "product.image" alt="Source Unknown"></a>Product Name :<b>{{ product.productName }} </b>
+    Price: <b>{{ product.price }}</b> <br><br>
+    
+  </li>
+</ul>
+</div>

@@ -1,0 +1,7 @@
+<h1 class="text-primary">Order List</h1>
+<ul>
+  <li *ngFor="let order of orders">
+    {{ order.userId }} {{ order.totalPrice }} {{ order.totalQuantity }} {{ order.deliveryDate}}
+    {{ order.dispatchDate }} 
+  </li>
+</ul>

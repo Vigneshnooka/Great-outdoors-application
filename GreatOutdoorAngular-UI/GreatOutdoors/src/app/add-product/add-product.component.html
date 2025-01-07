@@ -1,0 +1,215 @@
+<h1 class="text-center text-primary">Add Product</h1>
+<div class="container">
+  <form #myform="ngForm" (ngSubmit)="myform.valid && addProduct(myform)">
+    <div class="form-group">
+      <label for="productName">Product Name</label>
+      <input
+        id="productName"
+        ngModel
+        name="productName"
+        #productname="ngModel"
+        required
+        minlength="3"
+        class="form-control"
+      />
+      <div
+        class="text-danger"
+        *ngIf="productname.errors != null && productname.errors.required"
+      >
+        Product Name can not be empty
+      </div>
+
+      <div
+        *ngIf="productname.errors != null && productname.errors.minlength"
+        class="text-warning"
+      >
+        Please enter atleast 3 characters
+      </div>
+    </div>
+    <hr />
+
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input
+        class="form-control"
+        type="number"
+        id="price"
+        name="price"
+        ngModel
+        #price="ngModel"
+        required
+      />
+      <div
+        *ngIf="price.errors != null && price.errors.required"
+        class="text-danger"
+      >
+        price is required
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="form-group">
+      <label for="image">image</label>
+      <input
+        id="image"
+        name="image"
+        ngModel
+        #image="ngModel"
+        required
+        class="form-control"
+      />
+      <div
+        class="text-danger"
+        *ngIf="image.errors != null && image.errors.required"
+      >
+      image can not be empty
+      </div>
+    </div>
+    <hr />
+    <div class="form-group">
+      <label for="color">color</label>
+      <input
+        id="color"
+        name="color"
+        ngModel
+        #color="ngModel"
+        required
+        class="form-control"
+      />
+      <div
+        class="text-danger"
+        *ngIf="color.errors != null && color.errors.required"
+      >
+      color can not be empty
+      </div>
+    </div><!--
+    <div class="form-check-inline">
+      <label class="form-check-label text-dark" for="black">Black</label>
+      <input
+        class="form-check-input"
+        type="radio"
+        name="color"
+        id="black"
+        ngModel
+        #color="ngModel"
+        value="black"
+      />
+      <label class="form-check-label text-white" for="white">White</label>
+      <input
+        class="form-check-input"
+        type="radio"
+        id="white"
+        name="color"
+        ngModel
+        #color="ngModel"
+        value="White"
+      />
+      <label class="form-check-label text-primary" for="blue">Blue</label>
+      <input
+        class="form-check-input"
+        type="radio"
+        name="color"
+        id="blue"
+        ngModel
+        #color="ngModel"
+        value="Blue"
+      />
+      <div
+        class="text-danger"
+        *ngIf="color.errors != null && color.errors.required"
+      >
+        Select One
+      </div>
+    </div>
+  -->
+    <hr />
+    <div class="form-group">
+      <label for="category">Category</label>
+      <input
+        class="form-control"
+        id="category"
+        name="category"
+        ngModel
+        #category="ngModel"
+        required
+      />
+      <div
+        *ngIf="category.errors != null && category.errors.required"
+        class="text-danger"
+      >
+        Category can not be empty
+      </div>
+    </div>
+    <hr />
+    <div class="form-group">
+      <label for="quantity">Quantity</label>
+      <input
+        class="form-control"
+        type="number"
+        id="quantity"
+        name="quantity"
+        ngModel
+        #quantity="ngModel"
+        required
+      />
+      <div
+        *ngIf="quantity.errors != null && quantity.errors.required"
+        class="text-danger"
+      >
+        Quantity can not be empty
+      </div>
+    </div>
+    <hr />
+
+    <div class="form-group">
+      <label for="manufacturer">Manufacturer</label>
+      <input
+        class="form-control"
+        id="manufacturer"
+        name="manufacturer"
+        ngModel
+        #manufacturer="ngModel"
+        required
+        class="form-control"
+      />
+      <div
+        class="text-danger"
+        *ngIf="manufacturer.errors != null && manufacturer.errors.required"
+      >
+        Select a Manufacturer
+      </div>
+    </div>
+    <hr />
+    
+    <div class="form-group">
+      <label for="specification">Specification</label>
+      <input
+        id="specification"
+        name="specification"
+        ngModel
+        #specification="ngModel"
+        required
+        class="form-control"
+      />
+      <div
+        class="text-danger"
+        *ngIf="specification.errors != null && specification.errors.required"
+      >
+        Specification can not be empty
+      </div>
+    </div>
+    <hr />
+
+   
+    
+    <button type="submit" class="btn btn-primary">Add Product</button>
+  </form>
+</div>
+<div *ngIf="product !== undefined">
+
+<h3>Details Submitted</h3>
+  {{ product.productName }} {{ product.price }} {{ product.image }} {{ product.color }}
+    {{ product.category }}   {{ product.quantity }} {{ product.manufacturer }}
+  {{ product.specification }} 
+</div>

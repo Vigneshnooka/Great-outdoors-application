@@ -1,0 +1,124 @@
+
+<h1 class="text-center text-primary">Add Order</h1>
+<div class="container">
+  <form #myform="ngForm" (ngSubmit)="myform.valid && addOrder(myform)">
+    <div class="form-group">
+      <label for="userId">User Id</label>
+      <input
+        id="userId"
+        ngModel
+        name="userId"
+        #userId="ngModel"
+        required
+        minlength="3"
+        class="form-control"
+      />
+      <div
+        class="text-danger"
+        *ngIf="userId.errors != null && userId.errors.required"
+      >
+        user id can not be empty
+      </div>
+
+      <div
+        *ngIf="userId.errors != null && userId.errors.minlength"
+        class="text-warning"
+      >
+        Please enter atleast 3 characters
+      </div>
+    </div>
+    <hr />
+
+    <div class="form-group">
+      <label for="totalPrice">Total Price</label>
+      <input
+        class="form-control"
+        type="number"
+        id="totalPrice"
+        name="totalPrice"
+        ngModel
+        #totalPrice="ngModel"
+        required
+      />
+      <div
+        *ngIf="totalPrice.errors != null && totalPrice.errors.required"
+        class="text-danger"
+      >
+        price is required
+      </div>
+    </div>
+
+    <hr />
+
+    
+
+    
+       <div class="form-group">
+      <label for="totalQuantity">Total Quantity</label>
+      <input
+        class="form-control"
+        type="number"
+        id="totalQuantity"
+        name="totalQuantity"
+        ngModel
+        #totalQuantity="ngModel"
+        required
+      />
+      <div
+        *ngIf="totalQuantity.errors != null && totalQuantity.errors.required"
+        class="text-danger"
+      >
+        Quantity can not be empty
+      </div>
+    </div>
+    <hr />
+
+    
+    <div class="form-group">
+      <label for="deliveryDate">Delivery Date</label>
+      <input
+        id="deliveryDate"
+        name="deliveryDate"
+        ngModel
+        #deliveryDate="ngModel"
+        required
+        class="form-control"
+      />
+      <div
+        class="text-danger"
+        *ngIf="deliveryDate.errors != null && deliveryDate.errors.required"
+      >
+      delivery Datecan not be empty
+      </div>
+    </div>
+    <hr />
+    <div class="form-group">
+        <label for="dispatchDate">Dispatch Date</label>
+        <input
+          id="dispatchDate"
+          name="dispatchDate"
+          ngModel
+          #dispatchDate="ngModel"
+          required
+          class="form-control"
+        />
+        <div
+          class="text-danger"
+          *ngIf="dispatchDate.errors != null && dispatchDate.errors.required"
+        >
+        dispatch Date can not be empty
+        </div>
+      </div>
+      <hr />
+
+   
+    
+    <button type="submit" class="btn btn-primary">Add Order</button>
+  </form>
+</div>
+<div *ngIf="order !== undefined">
+
+<h3>Details Submitted</h3>
+  {{ order.userId }} {{ order.totalPrice }} {{ order.totalQuantity }} {{ order.deliveryDate}}
+    {{ order.dispatchDate }} 
+</div>

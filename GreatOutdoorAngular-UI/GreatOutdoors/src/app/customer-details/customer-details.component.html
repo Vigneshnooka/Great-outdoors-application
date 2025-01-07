@@ -1,0 +1,32 @@
+
+<h1 class="text-primary">Fetch Customer Details</h1>
+
+<form #myform="ngForm" (ngSubmit)="myform.valid && fetchCustomer(myform)">
+  <div>
+    <label for="id"> Id </label>
+    <input type="number" id="id" name="customerId" ngModel />
+  </div>
+
+  <input type="submit" value="Submit" />
+</form>
+
+<div class="jumbotron" *ngIf="customer !== undefined">
+    Customer CustomerId: {{customer.customerId}}
+    <br>
+
+        Customer Customername: {{customer.customerName}}
+        <br>
+        Customer MobileNumber: {{customer.mobileNo}}
+        <br>
+        Customer Email: {{customer.email}}
+        <br>
+        Customer Address: 
+        {{customer.address.buildingNo}},
+        {{customer.address.streetName}},
+        {{customer.address.area}},
+        {{customer.address.city}},
+        {{customer.address.state}}-
+        {{customer.address.zip}}
+        <br>
+        Customer Role: {{customer.role}}
+</div>

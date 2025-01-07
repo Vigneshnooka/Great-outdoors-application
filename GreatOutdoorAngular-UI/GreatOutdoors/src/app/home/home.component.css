@@ -1,0 +1,12 @@
+#fit{
+    width: 1100px;
+    height: 1440px;
+    object-fit: cover;
+}
+#clr{
+    color:black;
+}
+.logosize{
+    width: 70px;
+    height: 35px;
+}
